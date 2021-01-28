@@ -38,18 +38,10 @@ namespace TestTask
                     LocalFilePath = AllFiles[i],
                     FileName = Path.GetFileName(AllFiles[i]),
                 };
-
                 PrintFile(i);
-                //Console.Write($"Файл {i} " + ':' + $" {Files[i].FileName} : ");
-                //Files[i].Left = Console.CursorLeft;
-                //Files[i].Top = Console.CursorTop;
-                //Console.SetCursorPosition(Files[i].Left, Files[i].Top);
-                //Console.Write(" загрузка\n");
-
             }
             return Files;
         }
-
 
         private static void PrintFile(int FileIndex)
         {
@@ -59,9 +51,6 @@ namespace TestTask
             Console.SetCursorPosition(Files[FileIndex].Left, Files[FileIndex].Top);
             Console.Write(" загрузка\n");
         }
-
-
-
 
     }
 }

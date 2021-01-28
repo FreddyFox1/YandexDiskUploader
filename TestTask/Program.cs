@@ -23,6 +23,7 @@ namespace TestTask
             //Считываем путь до директории с файлами
             Console.Write("Укажите путь до директории с файлами: ");
             string Dir = Console.ReadLine();
+            
             //Считываем путь до директории на Yandex Disk
             Console.Write("Укажите сетевой адрес местоположение на Яндекс диске: ");
             string YandexDir = Console.ReadLine();
@@ -47,9 +48,7 @@ namespace TestTask
                     }
                 }).Start();
             }
-
             Console.ReadLine();
-
         }
 
         private static void UpdateStatus(int Top, int Left)
