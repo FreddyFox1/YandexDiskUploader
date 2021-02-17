@@ -4,21 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using YandexDiskUploader;
 
 namespace TestTask
 {
-    /// <summary>
-    /// Чтобы загрузить файл на Диск, необходимо:
-    /// 1. Запросить URL для загрузки.
-    /// 2. Загрузить файл по полученному адресу.
-    /// </summary>
-    interface Yandex
-    {
-        string getUploadUrl(string YandexDir, string FileName);
-        bool UploadFile(string url, string FilePath);
-    }
 
-    public class YandexAPI : Yandex
+    public class YandexAPI : IYandex
     {
         //Токен авторизации для Yandex Disk
         private string AccessToken { get; set; } = "Поставить свой токен";
@@ -34,11 +25,11 @@ namespace TestTask
             using (Stream responseStream = response.GetResponseStream())
             {
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                var url = JsonConvert.DeserializeObject<Upload>(reader.ReadToEnd());
+                var url = JsonConvert.DeserializeObject<ReceiveURL>(reader.ReadToEnd());
                 return url.href;
             }
-
         }
+
         //Отправляем файл на ЯД по указанной ссылке.
         public bool UploadFile(string url, string FilePath)
         {
@@ -79,7 +70,6 @@ namespace TestTask
             return true;
         }
     }
-
 
 }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TestTask
 {
-    public class Upload
+    public class ReceiveURL
     {
         public string operation_id { get; set; }
         public string href { get; set; }

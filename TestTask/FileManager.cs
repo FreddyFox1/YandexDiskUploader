@@ -7,7 +7,7 @@ namespace TestTask
 {
     public class FileManager
     {
-        //Создаем класс для удобства использования файлов
+        //Создаем класс для файлов
         public class UserFile
         {
             public string LocalFilePath { get; set; }
