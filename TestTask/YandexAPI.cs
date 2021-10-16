@@ -11,11 +11,9 @@ namespace TestTask
 
     public class YandexAPI : IYandex
     {
-        //Токен авторизации для Yandex Disk
-        private string AccessToken { get; set; } = "Поставить свой токен";
+        private string AccessToken { get; set; } = "token here";
 
-        //Получаем уникальную ссылку для загрузки файла
-        public string getUploadUrl(string YandexDir, string FileName)
+        public string GetUploadUrl(string YandexDir, string FileName)
         {
             var request = WebRequest.Create("https://cloud-api.yandex.net/v1/disk/resources/upload?path=" + YandexDir + '/' + FileName);
             request.Headers["Authorization"] = "OAuth " + AccessToken;
@@ -31,7 +29,7 @@ namespace TestTask
         }
 
         //Отправляем файл на ЯД по указанной ссылке.
-        public bool UploadFile(string url, string FilePath)
+        public bool UploadFile(string Url, string FilePath)
         {
             var request = WebRequest.Create(url);
             request.Method = "PUT";
