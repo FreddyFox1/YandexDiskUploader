@@ -1,7 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace YandexDiskUploader
 {
     /// <summary>
@@ -11,7 +7,7 @@ namespace YandexDiskUploader
     /// </summary>
     interface IYandex
     {
-        string getUploadUrl(string YandexDir, string FileName);
-        bool UploadFile(string url, string FilePath);
+        string GetUploadUrl(string YandexDir, string FileName);
+        bool UploadFile(string Url, string FilePath);
     }
 }
